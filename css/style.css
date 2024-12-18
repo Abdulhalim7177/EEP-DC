@@ -103,14 +103,23 @@
 
 .navbar-light .navbar-nav .nav-link {
     margin-right: 30px;
-    padding: 25px 0;
     color: #FFFFFF;
     font-size: 15px;
     text-transform: uppercase;
     outline: none;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:hover{
+    color: var(--primary);
+    border-radius: 30px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color: #08a7fd;
+    color:white;
+}
+
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
 }
@@ -150,6 +159,8 @@
         opacity: 0;
         visibility: hidden;
         transition: .5s;
+        /* font-family:'Courier New', Courier, monospace; */
+        font-weight: bolder;
         
     }
 
@@ -158,6 +169,12 @@
         visibility: visible;
         transition: .5s;
         opacity: 1;
+        color: var(--primary);
+        border-radius: 30px;
+        padding-left:10px;
+        padding-right:10px;
+        background-color: #08a7fd;
+        color:white;
     }
 }
 
