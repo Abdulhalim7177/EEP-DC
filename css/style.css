@@ -3,7 +3,7 @@
     --primary: #08a7fd;
     --secondary: #FF6922;
     --light: #EFFDF5;
-    --dark: #08a7fd;
+    --dark: #03496e;
     --blue: rgba(23, 2, 113, 0.452);
 }
 
@@ -260,7 +260,7 @@
 /*** Category ***/
 .cat-item div {
     background: #FFFFFF;
-    border: 1px dashed rgba(0, 185, 142, .3);
+    border: 3px dashed rgba(0, 18, 14, 0.3);
     transition: .5s;
 }
 
