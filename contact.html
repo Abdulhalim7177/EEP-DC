@@ -56,7 +56,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link">Home</a>
                         
                         <a href="index.html#services" class="nav-item nav-link">Our Programs</a>
                         <div class="nav-item dropdown">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
                     </div>
                     <!-- <a href="" class="btn btn-primary bg-dark px-3 d-none d-lg-flex">Add Property</a> -->
                 </div>
@@ -213,8 +213,30 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit" onclick="sendEmail(event)">Send Message</button>
                                     </div>
+                                    <script>
+                                        function sendEmail(e) {
+                                            e.preventDefault();
+                                            
+                                            const name = document.getElementById('name').value;
+                                            const email = document.getElementById('email').value;
+                                            const subject = document.getElementById('subject').value;
+                                            const message = document.getElementById('message').value;
+
+                                            Email.send({
+                                                SecureToken: "YOUR_SECURE_TOKEN", // Get this from SMTP provider like SmtpJS
+                                                To: 'ahmadsalisu.ams@gmail.com',
+                                                From: email,
+                                                Subject: subject,
+                                                Body: `Name: ${name}<br/>
+                                                      Email: ${email}<br/>
+                                                      Message: ${message}`
+                                            }).then(
+                                                message => alert("Message sent successfully")
+                                            );
+                                        }
+                                    </script>
                                 </div>
                             </form>
                         </div>
